@@ -9,7 +9,7 @@ import communityCover from '../assets/projects/community-cover.png';
 
 export const profile = {
   name: 'Lee Nam Kyoung',
-  role: 'Product Designer & Frontend Developer',
+  role: '웹디자이너 UI/UX디자인',
   tagline: '전통의 결을 현대적인 화면으로 옮기는 작업을 합니다.',
   bio: {
     ko: '사용자 경험과 비주얼 디테일 사이의 균형을 고민하는 디자이너 겸 개발자입니다. 브랜드의 정체성을 인터페이스 전반에 일관되게 녹여내는 작업을 좋아합니다.',
