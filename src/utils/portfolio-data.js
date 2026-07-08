@@ -8,7 +8,7 @@ import communityCover from '../assets/projects/community-cover.png';
  */
 
 export const profile = {
-  name: '홍길동',
+  name: 'Lee Nam Kyoung',
   role: 'Product Designer & Frontend Developer',
   tagline: '전통의 결을 현대적인 화면으로 옮기는 작업을 합니다.',
   bio: {
