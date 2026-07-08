@@ -35,7 +35,7 @@ function ProjectChapter({ project }) {
             </Typography>
             <Typography variant="h2">{title}</Typography>
           </Box>
-          <Stack direction="row" spacing={4} flexWrap="wrap">
+          <Stack direction="row" spacing={4} sx={{ flexWrap: 'wrap' }}>
             {meta.map(({ label, value }) => (
               <Box key={label}>
                 <Typography variant="caption" sx={{ fontWeight: 600, display: 'block' }}>

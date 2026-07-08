@@ -29,7 +29,7 @@ function AboutSection({ profile }) {
             <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1, maxWidth: 560 }}>
               {profile.bio.en}
             </Typography>
-            <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 4, rowGap: 1 }}>
+            <Stack direction="row" spacing={1} sx={{ mt: 4, rowGap: 1, flexWrap: 'wrap' }}>
               {profile.skills.map((skill) => (
                 <Chip key={skill} label={skill} sx={{ bgcolor: 'accent.main' }} />
               ))}

@@ -35,9 +35,7 @@ function Header({ name }) {
       <Container maxWidth="lg">
         <Stack
           direction="row"
-          alignItems="center"
-          justifyContent="space-between"
-          sx={{ py: 2 }}
+          sx={{ py: 2, alignItems: 'center', justifyContent: 'space-between' }}
         >
           <Typography variant="h3" sx={{ fontSize: '1rem', fontWeight: 700 }}>
             {name}

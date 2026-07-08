@@ -28,8 +28,10 @@ function Footer({ name, socials }) {
         <Stack
           direction={{ xs: 'column', md: 'row' }}
           spacing={{ xs: 2, md: 0 }}
-          alignItems={{ xs: 'flex-start', md: 'center' }}
-          justifyContent="space-between"
+          sx={{
+            alignItems: { xs: 'flex-start', md: 'center' },
+            justifyContent: 'space-between',
+          }}
         >
           <Typography variant="body2" sx={{ color: 'inherit' }}>
             © {new Date().getFullYear()} {name}. All rights reserved.

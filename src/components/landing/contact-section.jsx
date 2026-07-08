@@ -40,7 +40,7 @@ function ContactSection({ profile }) {
         >
           {profile.email}
         </Button>
-        <Stack direction="row" spacing={3} justifyContent="center">
+        <Stack direction="row" spacing={3} sx={{ justifyContent: 'center' }}>
           {profile.socials.map(({ label, url }) => (
             <Link
               key={label}
