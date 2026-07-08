@@ -8,14 +8,38 @@ import ImageGrid from './image-grid.jsx';
  * ProjectChapter 컴포넌트
  *
  * Props:
- * @param {object} project - 프로젝트 데이터(no, title, category, meta, caption, gridVariant, images) [Required]
+ * @param {object} project - 프로젝트 데이터(no, title, category, meta, caption, gridVariant, images, link) [Required]
+ *   - link [Optional]: 값이 있으면 타이틀/히어로 이미지를 클릭했을 때 해당 URL로 이동
  *
  * Example usage:
  * <ProjectChapter project={project} />
  */
 function ProjectChapter({ project }) {
-  const { no, title, category, meta, caption, gridVariant, images } = project;
+  const { no, title, category, meta, caption, gridVariant, images, link } = project;
   const heroImage = images[0];
+  const hasImageGrid = images.length > 1;
+
+  const titleBlock = (
+    <Box sx={{ maxWidth: 420 }}>
+      <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mb: 1 }}>
+        {no} · {category}
+      </Typography>
+      <Typography variant="h2">{title}</Typography>
+    </Box>
+  );
+
+  const heroBlock = (
+    <Box
+      sx={{
+        width: '100%',
+        height: { xs: 300, md: 500 },
+        bgcolor: heroImage.color,
+        backgroundImage: heroImage.src ? `url(${heroImage.src})` : undefined,
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+      }}
+    />
+  );
 
   return (
     <Box component="section" sx={{ py: { xs: 8, md: 12, lg: 16 } }}>
@@ -29,12 +53,19 @@ function ProjectChapter({ project }) {
             mb: { xs: 3, md: 5 },
           }}
         >
-          <Box sx={{ maxWidth: 420 }}>
-            <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mb: 1 }}>
-              {no} · {category}
-            </Typography>
-            <Typography variant="h2">{title}</Typography>
-          </Box>
+          {link ? (
+            <Box
+              component="a"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              {titleBlock}
+            </Box>
+          ) : (
+            titleBlock
+          )}
           <Stack direction="row" spacing={4} sx={{ flexWrap: 'wrap' }}>
             {meta.map(({ label, value }) => (
               <Box key={label}>
@@ -48,13 +79,13 @@ function ProjectChapter({ project }) {
         </Box>
       </Box>
 
-      <Box
-        sx={{
-          width: '100%',
-          height: { xs: 300, md: 500 },
-          bgcolor: heroImage.color,
-        }}
-      />
+      {link ? (
+        <Box component="a" href={link} target="_blank" rel="noopener noreferrer" sx={{ display: 'block' }}>
+          {heroBlock}
+        </Box>
+      ) : (
+        heroBlock
+      )}
 
       <Box sx={{ maxWidth: 'sm', mx: 'auto', mt: 5, px: { xs: 2, md: 0 } }}>
         <Typography variant="body1">{caption.ko}</Typography>
@@ -63,9 +94,11 @@ function ProjectChapter({ project }) {
         </Typography>
       </Box>
 
-      <Box sx={{ mt: 5, px: { xs: 2, md: 4 } }}>
-        <ImageGrid variant={gridVariant} images={images} />
-      </Box>
+      {hasImageGrid && (
+        <Box sx={{ mt: 5, px: { xs: 2, md: 4 } }}>
+          <ImageGrid variant={gridVariant} images={images} />
+        </Box>
+      )}
     </Box>
   );
 }

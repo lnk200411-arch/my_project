@@ -1,3 +1,6 @@
+import fileshareCover from '../assets/projects/fileshare-cover.png';
+import communityCover from '../assets/projects/community-cover.png';
+
 /**
  * 포트폴리오 플레이스홀더 데이터
  *
@@ -85,6 +88,32 @@ export const projects = [
       { label: 'Symbol 03', color: 'grey.300' },
       { label: 'Symbol 04', color: 'primary.dark' },
     ],
+  },
+  {
+    id: 'project-04',
+    no: '04',
+    title: 'FileShare',
+    category: 'Web Development',
+    meta: [],
+    caption: {
+      ko: '로그인 없이 파일을 업로드하고 공유할 수 있는 파일 공유 사이트입니다.',
+      en: 'A file sharing site where users can upload and share files without logging in.',
+    },
+    images: [{ label: 'Cover', src: fileshareCover }],
+    link: 'https://lnk200411-arch.github.io/fileshare/',
+  },
+  {
+    id: 'project-05',
+    no: '05',
+    title: 'My Community',
+    category: 'Web Development',
+    meta: [],
+    caption: {
+      ko: '게시글을 작성하고 소통할 수 있는 커뮤니티 사이트입니다.',
+      en: 'A community site for writing posts and interacting with other members.',
+    },
+    images: [{ label: 'Cover', src: communityCover }],
+    link: 'https://sep5.github.io/AI_VIBE/',
   },
 ];
 
