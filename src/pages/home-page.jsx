@@ -18,7 +18,7 @@ import { profile, projects, chapterBreaks } from '../utils/portfolio-data.js';
 function HomePage() {
   return (
     <Box component="main">
-      <HeroSection profile={profile} />
+      <HeroSection profile={profile} projects={projects} />
 
       <Box id="work">
         {projects.map((project, index) => (

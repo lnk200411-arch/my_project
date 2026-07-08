@@ -13,6 +13,7 @@ export const profile = {
     en: 'A designer-developer who balances user experience with visual detail, weaving brand identity consistently across every screen.',
   },
   email: 'hello@example.com',
+  instagramHandle: '@hongildong_design',
   socials: [
     { label: 'GitHub', url: 'https://github.com/' },
     { label: 'Instagram', url: 'https://instagram.com/' },
